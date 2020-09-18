@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container__calculator">
+        <form action="" id="emiCalculator">
+            <!-- Principal Amount -->
+            <p class="form__fieldtitle">Loan Amount</p>
+            <div class="container__section">
+                <div class="container__range-slider col-8">
+                    <div class="container__tt">
+                        <span class="tooltip tt__left">1000</span>
+                        <span class="tooltip tt__right">20000000</span>
+                    </div>
+                    <input type="range" id="principalAmountRS" value="1000" oninput="isPrincipal(this.value)" min="1000" max="20000000" />
+                </div>
+                <div class="container__input-text col-4">
+                    <input type="text" name="" id="principalAmountInput" value="1,000" oninput="isPrincipal(this.value)" min="1000" max="20000000"/>
+                </div>
+            </div>
+
+            <!-- Interest Amount -->
+            <p class="form__fieldtitle">Interest</p>
+            <div class="container__section">
+                <div class="container__range-slider col-8">
+                    <div class="container__tt">
+                        <span class="tooltip tt__left">1</span>
+                        <span class="tooltip tt__right">21</span>
+                    </div>
+                    <input type="range" name="" id="interestRange" value="1" oninput="isInterest(this.value)" min="1" max="21"/>
+                </div>
+                <div class="container__input-text col-4">
+                    <input type="text" name="" id="interestInput" value="1" oninput="isInterest(this.value)" min="1" max="21"/>
+                </div>
+            </div>
+
+            <!-- Tenure -->
+            <p class="form__fieldtitle">Tenure</p>
+            <div class="container__section">
+                <div class="container__range-slider col-8">
+                    <div class="container__tt">
+                        <span class="tooltip tt__left">3</span>
+                        <span class="tooltip tt__right">36</span>
+                    </div>
+                    <input type="range" name="" id="tenureRange" value="3" oninput="isTenure(this.value)" min="3" max="36"/>
+                </div>
+                <div class="container__input-text col-4">
+                    <input type="text" name="" id="tenureInput" value="3" oninput="isTenure(this.value)" min="3" max="36"/>
+                </div>
+            </div>
+        </form>
+
+        <!-- Display values -->
+        <div class="container__values">
+            <div class="container__outputsection">
+                <div class="container__outputtext">
+                    <p class="output__title">Principal Amount</p>
+                    <div class="append__section">
+                        <p class="appendText">Rs.&nbsp;</p>
+                        <p class="output__value">1,000</p>
+                    </div>
+                </div>
+
+                <div class="container__outputtext">
+                    <p class="output__title">Interest Amount</p>
+                    <div class="append__section">
+                        <p class="appendText">Rs.&nbsp;</p>
+                        <p class="output__value">1</p>
+                    </div>
+                </div>
+
+                <div class="container__outputtext">
+                    <p class="output__title">Monthly EMI</p>
+                    <div class="append__section">
+                        <p class="appendText">Rs.&nbsp;</p>
+                        <p class="output__value">1,001</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container__outputchart">
+                <!-- ChartJS -->
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

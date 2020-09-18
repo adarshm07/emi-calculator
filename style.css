@@ -11,7 +11,7 @@
 .container__section {
   display: flex;
   padding: 29px 20px;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .container__range-slider {

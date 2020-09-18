@@ -61,6 +61,14 @@ p.output__title {
   margin-bottom: 6px;
 }
 
+p.output__title.blue-color {
+  color: #294e9b;
+}
+
+p.output__title.orange-color {
+  color: #ff7000;
+}
+
 p.output__value,
 .appendText {
   font-weight: 700;
